@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zoom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zm_v1_black"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zm_pt_titlebar_height" >
+
+        <us.zoom.uicommon.widget.view.ZMIOSStyleTitlebarLayout
+            android:id="@+id/panelTitleBar"
+            style="@style/ZmTitleBar"
+            android:background="@color/zm_v1_gray_1800"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            zoom:zm_leftButton="@+id/btnClose"
+            zoom:zm_title="@+id/txtTitle" >
+
+            <Button
+                android:id="@+id/btnClose"
+                style="@style/ZmTitleBarAction"
+                android:text="@string/zm_btn_close" />
+
+            <us.zoom.uicommon.widget.view.ZMDynTextSizeTextView
+                android:id="@+id/txtTitle"
+                style="@style/ZmTitleBarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center|center_horizontal"
+                android:paddingLeft="@dimen/zm_padding_smallest_size"
+                android:paddingRight="@dimen/zm_padding_smallest_size"
+                android:textColor="@color/zm_v1_white_500"
+                android:text="@string/zm_video_action_item_reorder_gallery_video_335106" />
+        </us.zoom.uicommon.widget.view.ZMIOSStyleTitlebarLayout>
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
+
+

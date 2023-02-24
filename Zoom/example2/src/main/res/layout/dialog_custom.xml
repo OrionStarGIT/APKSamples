@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1920px"
+    android:layout_height="1080px"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="1200px"
+        android:layout_height="800px"
+        android:background="@drawable/dialog_round_linearlayout"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_marginTop="30px"
+            android:layout_width="900px"
+            android:layout_height="130px"
+            android:textSize="46px"
+            android:textFontWeight="400"
+            android:gravity="center"
+            android:textColor="#333333"
+            android:lineHeight="65px"
+            android:text="Setup the SDK Key and SDK Secret" />
+
+        <LinearLayout
+            android:layout_marginTop="52.5px"
+            android:layout_width="1000px"
+            android:layout_height="100px"
+            android:gravity="center"
+            android:background="@drawable/round_linearlayout"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/appKey"
+                android:layout_width="1000px"
+                android:layout_height="100px"
+                android:textSize="40px"
+                android:textFontWeight="500"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:lineHeight="56px"
+                android:text="pXg0s32RwGLIzbh_zdU_w"
+                android:hint="appKey" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="52.5px"
+            android:layout_width="1000px"
+            android:layout_height="100px"
+            android:gravity="center"
+            android:background="@drawable/round_linearlayout"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/appSecret"
+                android:layout_width="1000px"
+                android:layout_height="100px"
+                android:textSize="40px"
+                android:textFontWeight="400"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:lineHeight="56px"
+                android:inputType="textPersonName"
+                android:text="WZZAMKsB2d0cnOq9TuH6ZvE6eRVMBstn"
+                android:hint="appSecret" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_warning"
+            android:layout_marginTop="16px"
+            android:layout_width="544px"
+            android:layout_height="40px"
+            android:textSize="28px"
+            android:textFontWeight="400"
+            android:textAlignment="center"
+            android:textColor="#ec625a"
+            android:lineHeight="40px"
+            android:text="App Secret is requested, please set it up" />
+
+        <LinearLayout
+            android:layout_marginTop="27px"
+            android:layout_width="840px"
+            android:layout_height="1px"
+            android:background="#10000000"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="840px"
+            android:layout_height="80px">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_marginTop="12px"
+                android:layout_marginLeft="127px"
+                android:layout_width="167px"
+                android:layout_height="56px"
+                android:textSize="40px"
+                android:textFontWeight="500"
+                android:textAlignment="center"
+                android:background="#F6F6FA"
+                android:lineHeight="56px"
+                android:textColor="#50000000"
+                android:layout_weight="1"
+                android:text="CANCEL" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_marginLeft="126px"
+                android:layout_width="1px"
+                android:layout_height="80px"
+                android:text="TextView" />
+
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_marginTop="12px"
+                android:layout_marginLeft="179px"
+                android:layout_marginRight="179px"
+                android:layout_width="61px"
+                android:layout_height="56px"
+                android:textSize="40px"
+                android:textFontWeight="500"
+                android:textAlignment="center"
+                android:background="#F6F6FA"
+                android:lineHeight="56px"
+                android:layout_weight="1"
+                android:text="OK" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021. Zoom Video Communication. All rights reserved.
+  ~ Created by Jake Wang on 6/29/21 5:00 PM
+  ~ Last modified 6/29/21 5:00 PM
+  ~
+  -->
+<us.zoom.uicommon.widget.view.ZMMoveableViewParentLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dynamicRcfloat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/zm_rc_drawer">
+
+        <ImageView
+            android:id="@+id/rc_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/zm_rc_control"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/rc_keyboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:contentDescription="@string/zm_accessibility_rc_show_keyboard_23042"
+            android:src="@drawable/zm_rc_keyboard" />
+
+
+        <FrameLayout
+            android:id="@+id/rc_edit_or_qa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/rc_hidden_edit"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                tools:ignore="LabelFor" />
+
+            <ImageView
+                android:id="@+id/rc_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/zm_accessibility_rc_more_info_23042"
+                android:src="@drawable/zm_rc_question" />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/rc_content_span"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="rc_keyboard, rc_hidden_edit, rc_question" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:constraint_referenced_ids="rc_control,rc_keyboard,rc_edit_or_qa"
+            app:flow_wrapMode="chain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</us.zoom.uicommon.widget.view.ZMMoveableViewParentLayout>

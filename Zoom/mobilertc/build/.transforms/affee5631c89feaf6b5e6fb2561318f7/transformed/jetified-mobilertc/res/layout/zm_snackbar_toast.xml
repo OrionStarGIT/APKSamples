@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:padding="@dimen/zm_ui_kit_page_left_padding"
+    android:background="@color/zm_v2_alert_view_info_bg"
+    android:gravity="center">
+
+   <us.zoom.uicommon.widget.view.ZMCommonTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="@color/zm_v2_alert_view_info_text"
+        android:id="@android:id/message"
+        android:gravity="center"/>
+
+</LinearLayout>

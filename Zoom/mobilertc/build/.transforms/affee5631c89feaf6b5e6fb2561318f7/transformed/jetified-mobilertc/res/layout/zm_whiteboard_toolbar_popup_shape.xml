@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/zm_whiteboard_common_toolbar_bg"
+    android:gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/zm_wb_shape_popup_width"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_height="wrap_content"
+        android:background="@drawable/zm_wb_shape_popup_bg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/zm_margin_smaller_size"
+            android:layout_marginTop="@dimen/zm_margin_small_size"
+            android:layout_marginEnd="@dimen/zm_margin_smaller_size"
+            android:background="@drawable/zm_wb_shape_search_bg"
+            android:paddingStart="@dimen/zm_padding_smaller_size"
+            android:paddingTop="@dimen/zm_padding_smallest_minus_size"
+            android:paddingEnd="@dimen/zm_padding_smaller_size"
+            android:paddingBottom="@dimen/zm_padding_smallest_minus_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/zm_ic_wb_shape_search" />
+
+            <EditText
+                android:id="@+id/edtSearch"
+                style="@style/ZMEditText.GlobalSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/zm_margin_smaller_size"
+                android:layout_marginEnd="@dimen/zm_margin_smallest_plus_size"
+                android:gravity="start"
+                android:hint="@string/zm_wb_shape_search_tip_401903"
+                android:textColor="@color/zm_v2_txt_primary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivClose"
+                app:layout_constraintStart_toEndOf="@+id/ivSearch"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginEnd="@dimen/zm_padding_large_size" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClose"
+                android:layout_width="@dimen/zm_padding_normal_size"
+                android:layout_height="@dimen/zm_padding_normal_size"
+                android:contentDescription="@string/zm_wb_shape_ax_search_clear_401903"
+                android:padding="@dimen/zm_padding_smallest_minus_minus_size"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/zm_ic_wb_shape_search_close"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsvShapes"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/zm_margin_smaller_size"
+            android:fadeScrollbars="false"
+            android:scrollbars="vertical"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/clExpand"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight="wrap_content"
+            app:layout_constraintHeight_max="@dimen/zm_wb_shape_popup_list_max_height"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clSearch"
+            app:layout_goneMarginBottom="@dimen/zm_margin_small_size"
+            app:layout_goneMarginTop="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <com.zipow.annotate.popup.toolbarpopup.ShapePopupChildView
+                    android:id="@+id/mRecentView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/zm_margin_small_minus_size"
+                    android:layout_marginEnd="@dimen/zm_margin_small_minus_size"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/mBasicShapesView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:scvHideIcon="true"
+                    app:scvTitle="@string/zm_wb_shape_recent_used_401903"
+                    tools:visibility="visible" />
+
+
+                <com.zipow.annotate.popup.toolbarpopup.ShapePopupChildView
+                    android:id="@+id/mBasicShapesView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/zm_margin_small_minus_size"
+                    android:layout_marginEnd="@dimen/zm_margin_small_minus_size"
+                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/mFlowChartView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mRecentView"
+                    app:layout_goneMarginTop="@dimen/zm_margin_smaller_size"
+                    app:scvTitle="@string/zm_wb_shape_basic_shapes_401903" />
+
+
+                <com.zipow.annotate.popup.toolbarpopup.ShapePopupChildView
+                    android:id="@+id/mFlowChartView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/zm_margin_small_minus_size"
+                    android:layout_marginEnd="@dimen/zm_margin_small_minus_size"
+                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/mUMLView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mBasicShapesView"
+                    app:scvTitle="@string/zm_wb_shape_flowchart_401903" />
+
+                <com.zipow.annotate.popup.toolbarpopup.ShapePopupChildView
+                    android:id="@+id/mUMLView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/zm_margin_small_minus_size"
+                    android:layout_marginEnd="@dimen/zm_margin_small_minus_size"
+                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/mEquationsView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mFlowChartView"
+                    app:scvTitle="@string/zm_wb_accessibility_shape_uml_437414" />
+
+
+                <com.zipow.annotate.popup.toolbarpopup.ShapePopupChildView
+                    android:id="@+id/mEquationsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/zm_margin_small_minus_size"
+                    android:layout_marginEnd="@dimen/zm_margin_small_minus_size"
+                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mUMLView"
+                    app:scvTitle="@string/zm_wb_accessibility_shape_equations_437414" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clExpand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/zm_margin_small_minus_size"
+            android:background="@drawable/zm_wb_shape_popup_bottom_bg"
+            android:gravity="center"
+            android:paddingStart="@dimen/zm_margin_small_size"
+            android:paddingEnd="@dimen/zm_margin_small_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="-10dp"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="-10dp"
+                android:layout_marginBottom="-4dp"
+                android:background="@drawable/zm_wb_shape_expand_btn_bg"
+                app:layout_constraintBottom_toBottomOf="@+id/tvExpand"
+                app:layout_constraintEnd_toEndOf="@+id/ivExpand"
+                app:layout_constraintStart_toStartOf="@+id/tvExpand"
+                app:layout_constraintTop_toTopOf="@+id/tvExpand" />
+
+            <TextView
+                android:id="@+id/tvExpand"
+                style="@style/ZmTextView.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/zm_btn_smallest_height"
+                android:layout_marginTop="@dimen/zm_margin_small_minus_size"
+                android:layout_marginBottom="@dimen/zm_margin_small_minus_size"
+                android:text="@string/zm_wb_shape_show_less_401903"
+                android:textColor="@color/zm_v2_btn_black_text_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivExpand"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivExpand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/zm_ic_whiteboard_share_arrow_down"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvExpand"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvSearchEmptyTip"
+            style="@style/ZMTextView.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:gravity="center"
+            android:paddingTop="@dimen/zm_padding_small_size"
+            android:paddingBottom="@dimen/zm_padding_small_size"
+            android:layout_marginStart="@dimen/zm_margin_small_minus_size"
+            android:layout_marginTop="@dimen/zm_margin_small_size"
+            android:layout_marginEnd="@dimen/zm_margin_small_minus_size"
+            android:layout_marginBottom="@dimen/zm_margin_small_size"
+            android:text="@string/zm_wb_shape_search_empty_tip_410347"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clSearch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

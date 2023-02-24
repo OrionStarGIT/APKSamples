@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/zm_whiteboard_common_toolbar_bg"
+    android:orientation="horizontal"
+    android:padding="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin">
+
+
+    <com.zipow.annotate.popup.icon.ShapeIconView
+        android:id="@+id/ivBold"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:contentDescription="@string/zm_whiteboard_accessibility_bold_289013"
+        app:iconBaseDrawable="@drawable/zm_ic_whiteboard_note_bold_normal" />
+
+    <com.zipow.annotate.popup.icon.ShapeIconView
+        android:id="@+id/ivItalic"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:contentDescription="@string/zm_whiteboard_accessibility_italic_289013"
+        app:iconBaseDrawable="@drawable/zm_ic_whiteboard_note_italic_normal" />
+
+    <com.zipow.annotate.popup.icon.ShapeIconView
+        android:id="@+id/ivUnderLine"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:contentDescription="@string/zm_whiteboard_accessibility_underline_289013"
+        app:iconBaseDrawable="@drawable/zm_ic_whiteboard_note_underline_normal" />
+
+    <com.zipow.annotate.popup.icon.ShapeIconView
+        android:id="@+id/ivmIvStrikeThrough"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:contentDescription="@string/zm_richtext_menu_strikethrough_268214"
+        app:iconBaseDrawable="@drawable/zm_tool_item_strikethrough" />
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:background="@drawable/zm_ic_whiteboard_divider_vertical" />
+
+    <LinearLayout
+        android:id="@+id/ivColorLayout"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:orientation="vertical">
+
+        <com.zipow.annotate.popup.icon.ShapeIconView
+            android:layout_width="@dimen/zm_whiteboard_text_color_line_width"
+            android:layout_height="@dimen/zm_whiteboard_text_color_line_width"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/zm_whiteboard_text_color_margin"
+            android:contentDescription="@string/zm_whiteboard_accessibility_color_289013"
+            app:iconBaseDrawable="@drawable/zm_ic_whiteboard_menu_text_textcolor" />
+
+        <com.zipow.annotate.popup.icon.ShapeIconView
+            android:id="@+id/ivColor"
+            android:layout_width="@dimen/zm_whiteboard_text_color_height"
+            android:layout_height="@dimen/zm_whiteboard_text_color_line_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/zm_whiteboard_text_color_step"
+            android:contentDescription="@string/zm_whiteboard_accessibility_color_289013"
+            app:iconBaseDrawable="@drawable/zm_ic_whiteboard_menu_text_color_line" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ivHighLightLayout"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:orientation="vertical">
+
+        <com.zipow.annotate.popup.icon.ShapeIconView
+            android:layout_width="@dimen/zm_whiteboard_text_color_line_width"
+            android:layout_height="@dimen/zm_whiteboard_text_color_line_width"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/zm_whiteboard_text_color_margin"
+            android:contentDescription="@string/zm_whiteboard_accessibility_color_289013"
+            app:iconBaseDrawable="@drawable/zm_ic_whiteboard_menu_text_highlight" />
+
+        <com.zipow.annotate.popup.icon.ShapeIconView
+            android:id="@+id/ivTextHightlight"
+            android:layout_width="@dimen/zm_whiteboard_text_color_height"
+            android:layout_height="@dimen/zm_whiteboard_text_color_line_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/zm_whiteboard_text_color_step"
+            android:contentDescription="@string/zm_whiteboard_accessibility_color_289013"
+            app:iconBaseDrawable="@drawable/zm_ic_whiteboard_menu_text_color_line" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:background="@drawable/zm_ic_whiteboard_divider_vertical" />
+
+    <TextView
+        android:id="@+id/tvSize"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:background="@drawable/zm_whiteboard_popup_null_selector"
+        android:contentDescription="@string/zm_whiteboard_accessibility_text_size_289013"
+        android:gravity="center"
+        android:textColor="@color/zm_v2_whiteboard_text_black"
+        android:textSize="@dimen/zm_font_small_size"
+        android:textStyle="bold"
+        tools:text="16" />
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:background="@drawable/zm_ic_whiteboard_divider_vertical" />
+
+
+    <com.zipow.annotate.popup.icon.ShapeIconView
+        android:id="@+id/ivAlign"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:contentDescription="@string/zm_whiteboard_accessibility_text_align_289013"
+        app:iconBaseDrawable="@drawable/zm_ic_whiteboard_note_align_left_normal" />
+
+    <View
+        android:visibility="gone"
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:background="@drawable/zm_ic_whiteboard_divider_vertical" />
+
+    <com.zipow.annotate.popup.icon.ShapeIconView
+        android:visibility="gone"
+        android:id="@+id/ivLink"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:contentDescription="@string/zm_dashboard_menu_link_431985"
+        app:iconBaseDrawable="@drawable/zm_ic_whiteboard_menu_link" />
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:background="@drawable/zm_ic_whiteboard_divider_vertical" />
+
+    <com.zipow.annotate.popup.icon.ShapeIconView
+        android:id="@+id/ivBulletedList"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:contentDescription="@string/zm_richtext_menu_bullet_268214"
+        app:iconBaseDrawable="@drawable/zm_ic_whiteboard_menu_bulleted_list" />
+
+    <com.zipow.annotate.popup.icon.ShapeIconView
+        android:id="@+id/ivNumberedList"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:contentDescription="@string/zm_dashboard_menu_numbered_list_431985"
+        app:iconBaseDrawable="@drawable/zm_ic_whiteboard_menu_number_list" />
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:background="@drawable/zm_ic_whiteboard_divider_vertical" />
+
+    <com.zipow.annotate.popup.icon.ShapeIconView
+        android:id="@+id/ivErase"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:contentDescription="@string/zm_whiteboard_accessibility_erase_289013"
+        app:iconBaseDrawable="@drawable/zm_ic_whiteboard_toolbar_eraser_default" />
+
+
+    <View
+        android:id="@+id/moreSeperater"
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:background="@drawable/zm_ic_whiteboard_divider_vertical" />
+
+    <com.zipow.annotate.popup.icon.ShapeIconView
+        android:id="@+id/ivMore"
+        android:layout_width="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_height="@dimen/zm_cloud_whiteboard_menu_bar_icon_size"
+        android:layout_marginStart="@dimen/zm_cloud_whiteboard_menu_bar_icon_margin"
+        android:contentDescription="@string/zm_whiteboard_accessibility_more_289013"
+        app:iconBaseDrawable="@drawable/zm_ic_whiteboard_popup_more_normal" />
+</LinearLayout>

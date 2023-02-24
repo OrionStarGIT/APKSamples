@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:context="com.zipow.annotate.follow.FollowIndicatorView"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <TextView
+        android:id="@+id/tvFollowPeople"
+        style="@style/ZMTextView.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/zm_margin_small_size"
+        android:paddingTop="@dimen/zm_padding_smallest_size"
+        android:paddingEnd="@dimen/zm_margin_small_size"
+        android:textColor="@color/zm_v1_gray_2100"
+        android:paddingBottom="@dimen/zm_padding_smallest_size"
+        android:text="@string/zm_wb_follow_mode_you_are_following_383781" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/zm_v1_black_50_alpha56" />
+
+    <TextView
+        android:id="@+id/tvStopFollow"
+        style="@style/ZMTextView.Medium"
+        android:layout_width="wrap_content"
+        android:textColor="@color/zm_v1_gray_2100"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/zm_margin_small_size"
+        android:paddingTop="@dimen/zm_padding_smallest_size"
+        android:paddingEnd="@dimen/zm_margin_small_size"
+        android:paddingBottom="@dimen/zm_padding_smallest_size"
+        android:text="@string/zm_wb_follow_mode_stop_following_383781" />
+
+</merge>

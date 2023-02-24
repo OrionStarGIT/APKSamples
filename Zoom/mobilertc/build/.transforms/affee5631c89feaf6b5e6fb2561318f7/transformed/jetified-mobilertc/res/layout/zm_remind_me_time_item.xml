@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/remind_me_time_layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/zm_action_sheet_menu_min_height"
+    android:gravity="center"
+    android:background="@drawable/zm_v2_bg_menu">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/zm_margin_small_size"
+        android:layout_marginRight="@dimen/zm_margin_small_size">
+        <TextView
+            android:id="@+id/remind_me_time_text"
+            style="@style/ZmTextView.Content.Primary"
+            android:textColor="@color/zm_v2_btn_black_text_color"
+            android:maxLines="1"
+            android:gravity="left"
+            tools:text="Reply"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>

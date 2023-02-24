@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <LinearLayout
+        android:id="@+id/llTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/zm_margin_small_minus_size"
+        android:layout_marginTop="@dimen/zm_margin_smallest_size"
+        android:layout_marginEnd="@dimen/zm_margin_smallest_size"
+        android:layout_marginBottom="@dimen/zm_margin_smaller_size"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginBottom="@dimen/zm_margin_small_size">
+
+        <ImageView
+            android:id="@+id/ivChildExpand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:rotation="180"
+            android:src="@drawable/zm_ic_whiteboard_share_arrow_down" />
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/ZMTextView.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/zm_wb_shape_child_title_height"
+            android:singleLine="true"
+            android:layout_marginStart="@dimen/zm_margin_smallest_size"
+            android:gravity="center_vertical"
+            tools:text="@string/zm_wb_shape_basic_shapes_401903" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvShapes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/zm_margin_smallest_plus_size"
+        android:layout_marginBottom="@dimen/zm_margin_smallest_size"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llTitle"
+        tools:itemCount="4"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/zm_whiteboard_menu_popup_common_item" />
+</merge>

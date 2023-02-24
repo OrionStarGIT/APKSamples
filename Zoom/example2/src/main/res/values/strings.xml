@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="this_app_name">Zoom</string>
+    <string name="this_app_welcome">
+        hello, everybody! \n
+        Need to configure if you want to use your own zoom:\n
+        1.modify the appKey, appSecret, meetingNo, password of the MainActivity.java in line 39, 40, 41, 42\n
+
+        Current room number：85224729671
+    </string>
+    <string name="main_tile_h1">
+        Welcome to Video Meeting
+    </string>
+    <string name="main_contents">
+        Please enter the meeting code and then start the video meeting
+    </string>
+</resources>

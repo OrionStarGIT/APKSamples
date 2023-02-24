@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/zm_round_rect_white_r8"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/zm_white"
+        android:orientation="vertical"
+        android:padding="@dimen/zm_padding_largest">
+
+        <FrameLayout
+            android:id="@+id/panelTopBar"
+            android:layout_width="0dp"
+            android:layout_marginBottom="@dimen/zm_margin_normal"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/panelVideoContainer">
+
+            <ImageView
+                android:id="@+id/btnLeave"
+                style="@style/ZMTextView.Title.OnLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:contentDescription="@string/zm_btn_leave_conf"
+                android:padding="@dimen/zm_padding_smaller_size"
+                android:src="@drawable/ic_new_jfl_close" />
+
+           <us.zoom.uicommon.widget.view.ZMCommonTextView
+                android:id="@+id/txtTitle"
+                style="@style/ZMTextView.ExtremLarge.OnLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_gravity="center_vertical|center"
+                android:text="@string/zm_title_video_preview_95788"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/panelVideoContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/zm_margin_smallest_size"
+            android:background="@color/zm_transparent"
+            android:minHeight="180dp"
+            android:visibility="visible"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintTop_toBottomOf="@id/panelTopBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/hostSelectVBDownloadPanel">
+
+            <us.zoom.feature.video.views.ZmPreviewVideoView
+                android:id="@+id/previewVideoView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:id="@+id/containerVB"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/btnVB"
+                    android:contentDescription="@string/zm_title_setting_virtual_background_174032"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/zm_margin_small"
+                    android:src="@drawable/zm_btn_video_preview_choose_vb" />
+
+               <us.zoom.uicommon.widget.view.ZMCommonTextView
+                    android:id="@+id/tipVB"
+                    android:background="@drawable/tip_left_bg"
+                    android:layout_width="wrap_content"
+                    android:textColor="#ffffff"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textSize="@dimen/zm_font_size_medium"
+                    android:text="@string/zm_lbl_virtual_background_video_preview_tip_174032"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    >
+                    <CheckedTextView
+                        android:id="@+id/btnNjfPreAudio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:checkMark="@drawable/btn_audio_state_bg" />
+                    <CheckedTextView
+                        android:id="@+id/btnNjfPreVideo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:checkMark="@drawable/btn_video_state_bg"
+                        android:layout_marginLeft="@dimen/zm_dialog_margin_16dp"
+                        />
+                </LinearLayout>
+                <FrameLayout
+                    android:layout_marginLeft="@dimen/zm_padding_medium_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <include android:id="@+id/panelWebinarNameTag"
+                        layout="@layout/zm_layout_video_unit_name_tag" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/hostSelectVBDownloadPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/zm_margin_small_size"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/panelVideoContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/panelBottom"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/downloadProgressBar"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginRight="6dp" />
+
+            <ImageView
+                android:id="@+id/imgDownloadStatus"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginRight="6dp"
+                tools:ignore="ContentDescription" />
+
+           <us.zoom.uicommon.widget.view.ZMCommonTextView
+                android:id="@+id/txtDownloadStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/zm_v2_txt_primary"
+                android:textSize="@dimen/zm_ui_kit_text_size_13sp"
+                tools:text="11111111111111111111111111" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/optionTurnOnVideoWithoutPreview"
+            style="@style/ZmSettingItem.UnClick"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/zm_margin_small_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnJoin"
+            app:layout_constraintTop_toBottomOf="@id/hostSelectVBDownloadPanel"
+            app:layout_constraintBottom_toTopOf="@id/btnJoin"
+            android:layout_marginRight="@dimen/zm_dialog_margin_12dp"
+            >
+
+            <us.zoom.uicommon.widget.view.ZMCommonTextView
+                style="@style/ZmSettingItemTitle"
+                android:text="@string/zm_lbl_turn_on_video_without_preview_95788"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+
+            <us.zoom.uicommon.widget.view.ZMCheckedTextView
+                android:id="@+id/chkTurnOnVideoWithoutPreview"
+                style="@style/ZMScheduleCheckBox" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnJoin"
+            style="@style/ZmButton"
+            android:layout_width="wrap_content"
+            android:minWidth="130dp"
+            android:text="@string/zm_btn_join"
+            android:textSize="@dimen/zm_ui_kit_text_size_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/optionTurnOnVideoWithoutPreview"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+

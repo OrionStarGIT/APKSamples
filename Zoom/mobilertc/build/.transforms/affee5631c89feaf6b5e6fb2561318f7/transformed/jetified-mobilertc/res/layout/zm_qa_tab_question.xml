@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zoom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <us.zoom.uicommon.widget.view.ZMAlertView
+        android:id="@+id/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zoom:zm_type="WARNING"
+        zoom:zm_need_cancel="true"
+        zoom:zm_text="@string/zm_qa_msg_everyone_can_see_question_162313"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_below="@id/hint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:id="@+id/panelNoItemMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:orientation="vertical"
+        android:layout_centerInParent="true" >
+       <us.zoom.uicommon.widget.view.ZMCommonTextView
+            android:id="@+id/txtMsg"
+            style="@style/ZMTextView.Large.OnLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/zm_qa_msg_no_question_41047" />
+       <us.zoom.uicommon.widget.view.ZMCommonTextView
+            android:id="@+id/txtMsg2"
+            style="@style/ZMTextView.OnLight.Medium.Dimmed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:gravity="center"
+            android:text="@string/zm_qa_attendee_msg_162313" />
+    </LinearLayout>
+
+</RelativeLayout>

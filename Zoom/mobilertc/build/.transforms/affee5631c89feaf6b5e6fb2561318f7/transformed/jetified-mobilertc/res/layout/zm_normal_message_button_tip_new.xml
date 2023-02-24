@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/zm_tip_new_background"
+    android:gravity="left|center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/zm_margin_small_minus_size"
+        android:src="@drawable/zm_ic_tick"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/panelContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/zm_margin_small_minus_size"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <us.zoom.uicommon.widget.view.ZMCommonTextView
+            android:id="@+id/txtTitle"
+            style="@style/ZMTextView.TipMessage.Title.Medium.OnDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zm_msg_conf_waiting_to_invite_title" />
+
+        <us.zoom.uicommon.widget.view.ZMCommonTextView
+            android:id="@+id/txtMessage"
+            style="@style/ZMTextView.TipMessage.OnDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:maxWidth="240dp"
+            android:gravity="left|center_vertical"
+            android:maxLines="3"
+            android:text="@string/zm_msg_conf_waiting_to_invite"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <us.zoom.uicommon.widget.view.ZMCommonTextView
+        android:id="@+id/txtButton"
+        style="@style/ZMTextView.TipMessage.Button"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/zm_btn_ok"
+        android:visibility="gone" />
+
+</LinearLayout>

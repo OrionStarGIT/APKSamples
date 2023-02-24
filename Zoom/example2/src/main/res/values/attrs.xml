@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SelectorImageView">
+        <attr name="selector_src" format="reference" ></attr>
+        <attr name="checked" format="boolean"></attr>
+    </declare-styleable>
+</resources>

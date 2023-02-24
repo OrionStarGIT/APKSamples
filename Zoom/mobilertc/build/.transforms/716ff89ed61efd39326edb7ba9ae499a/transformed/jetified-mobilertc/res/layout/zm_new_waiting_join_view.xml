@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:zoom="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/zm_white"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/panelTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/zm_margin_smaller_size"
+        android:layout_marginBottom="@dimen/zm_margin_smaller_size"
+        android:layout_marginLeft="@dimen/zm_dialog_margin_16dp"
+        android:layout_marginRight="@dimen/zm_dialog_margin_16dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnLeave"
+            style="@style/ZMTextView.Title.OnLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/zm_btn_leave_conf"
+            android:padding="@dimen/zm_padding_smaller_size"
+            android:src="@drawable/ic_new_jfl_close" />
+
+        <us.zoom.uicommon.widget.view.ZMCommonTextView
+            android:id="@+id/txtWRTitle"
+            style="@style/ZmTitleBarTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_gravity="center"
+            android:text="@string/zm_lbl_in_meeting_settings_enable_waiting_room_150183"
+            android:textSize="@dimen/zm_font_larger_size"
+            />
+
+        <LinearLayout
+            android:id="@+id/moreViewPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            >
+
+            <us.zoom.uicommon.widget.view.ZMCommonTextView
+                android:id="@+id/txtChatCount"
+                style="@style/ZMTextView.UnreadMessageCount.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|start"
+                android:gravity="center"
+                app:layout_constraintCircleAngle="@dimen/zm_circle_angle_300"
+                app:layout_constraintCircleRadius="@dimen/zm_margin_small_size"
+                android:visibility="gone"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnNjfMore"
+                style="@style/ZmButton.Small.Secondary"
+                android:layout_width="@dimen/zm_text_normal_width"
+                android:layout_height="@dimen/zm_btn_small_height"
+                android:contentDescription="@string/zm_mm_lbl_emojis_12050"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_more" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.zipow.videobox.view.panel.ZmLeaveCancelPanel
+            android:id="@+id/zmWaitRoomLeaveCancelPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/panelDescriptionView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/zm_dialog_margin_16dp"
+            android:layout_marginRight="@dimen/zm_dialog_margin_16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/panelCenterView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/statusTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.zipow.videobox.newjoinflow.waitingview.oldui.ZmJoinFlowVideoView
+                    android:id="@+id/jfvideoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/joinflowLogo"
+                    layout="@layout/zm_new_joinflow_imagelogo"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/joinflowDefault"
+                    layout="@layout/zm_new_joinflow_default"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/statusTxt"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/panelCenterView"
+                android:gravity="center_vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/jbhScroolView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+
+                        <us.zoom.uicommon.widget.view.ZMCommonTextView
+                            android:id="@+id/txtMeetingToipc"
+                            style="@style/ZmTitleBarTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:textSize="@dimen/zm_ui_kit_text_size_28sp" />
+
+                    <us.zoom.uicommon.widget.view.ZMCommonTextView
+                        android:id="@+id/meetingTime"
+                        style="@style/ZmSettingItemTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/zm_msg_you_are_in_silent_mode"
+                        android:textColor="@color/zm_text_dim"
+                        android:textSize="@dimen/zm_ui_kit_text_size_12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/meetingState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <us.zoom.uicommon.widget.view.ZMCommonTextView
+                            android:id="@+id/txtWaiting"
+                            style="@style/ZmSettingItemTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center|center_vertical"
+                            android:text="@string/zm_msg_waiting_for_scheduler" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar1"
+                        style="@style/ZMProgressBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+
+                    <us.zoom.uicommon.widget.view.ZMCommonTextView
+                        android:id="@+id/btnHostSign"
+                        style="@style/ZmTextView.Button.Bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/zm_btn_login"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <us.zoom.uicommon.widget.slide.ZmSlidingPanel
+            android:id="@+id/sliding_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/zm_transparent"
+            zoom:default_pos="right_bottom" />
+    </FrameLayout>
+</LinearLayout>

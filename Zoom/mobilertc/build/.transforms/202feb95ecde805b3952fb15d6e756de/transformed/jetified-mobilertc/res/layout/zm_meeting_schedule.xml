@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/timerPanel"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="New" />
+
+
+    <LinearLayout
+        android:id="@+id/timerPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/txtDate"
+        app:layout_constraintTop_toBottomOf="@+id/txtStatus"
+        tools:visibility="visible">
+
+        <us.zoom.uicommon.widget.view.ZMCommonTextView
+            android:id="@+id/txtDuration"
+            style="@style/UIKitTextView.Small.Blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_schedule_meeting_camera"
+            android:drawablePadding="4dp"
+            android:textColor="@color/zm_schedule_meeting_now"
+            tools:text="0:10" />
+
+        <us.zoom.uicommon.widget.view.ZMCommonTextView
+            android:id="@+id/txtJoinedCount"
+            style="@style/ZMTextView.Small.Dimmed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/txtDuration"
+            app:layout_constraintLeft_toRightOf="@+id/txtDuration"
+            tools:text="1 person joined" />
+    </LinearLayout>
+
+    <us.zoom.uicommon.widget.view.ZMCommonTextView
+        android:id="@+id/txtDate"
+        style="@style/ZMTextView.Small.Dimmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/txtMeetingTime"
+        app:layout_constraintTop_toBottomOf="@+id/timerPanel"
+        tools:text="Tue,Mar 30 Today" />
+
+    <us.zoom.uicommon.widget.view.ZMCommonTextView
+        android:id="@+id/txtMeetingTime"
+        style="@style/ZMTextView.Small.Dimmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/txtMeetingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtDate"
+        tools:text="12:00 AM - 12:00 PM 2hrs 20mins " />
+
+    <us.zoom.uicommon.widget.view.ZMCommonTextView
+        android:id="@+id/txtMeetingTitle"
+        style="@style/ZMTextView.OnLight.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/panelMembers"
+        app:layout_constraintTop_toBottomOf="@+id/txtMeetingTime"
+        tools:text="Design Sync - Calendar Cards (very long title very long title very long title very long title very long title very long title very long title very long title very long title)" />
+
+
+    <LinearLayout
+        android:id="@+id/panelMembers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMeetingTitle">
+
+        <LinearLayout
+            android:id="@+id/panelAvatars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+
+        <us.zoom.uicommon.widget.view.ZMCommonTextView
+            android:id="@+id/txtMoreCount"
+            style="@style/UIKitTextView.Small.Gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/ic_schedule_meeting_more_count"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:text="+2"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnAction"
+        style="@style/ZmButton.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:text="@string/zm_bo_btn_join_bo"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

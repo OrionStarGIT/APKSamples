@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/zm_margin_normal_plus_size">
+
+    <us.zoom.uicommon.widget.view.ZMTextView
+        android:id="@+id/txtTime"
+        style="@style/ZMTextView.BuddyName.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/zm_padding_small"
+        android:text="@string/zm_allow_device_dlg_label_time_382015" />
+
+    <us.zoom.uicommon.widget.view.ZMTextView
+        android:id="@+id/txtBrowser"
+        style="@style/ZMTextView.BuddyName.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/zm_padding_small"
+        android:text="@string/zm_allow_device_dlg_label_browser_382015" />
+
+    <us.zoom.uicommon.widget.view.ZMTextView
+        android:id="@+id/txtOS"
+        style="@style/ZMTextView.BuddyName.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/zm_padding_small"
+        android:text="@string/zm_allow_device_dlg_label_os_382015" />
+
+    <us.zoom.uicommon.widget.view.ZMTextView
+        android:id="@+id/txtLoc"
+        style="@style/ZMTextView.BuddyName.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/zm_padding_small"
+        android:text="@string/zm_allow_device_dlg_label_location_382015" />
+
+</LinearLayout>

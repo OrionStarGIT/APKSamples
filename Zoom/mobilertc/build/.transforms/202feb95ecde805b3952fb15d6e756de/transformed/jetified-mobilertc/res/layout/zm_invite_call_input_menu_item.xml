@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/zm_v2_bg_menu"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/zm_action_sheet_menu_min_height"
+    >
+
+    <LinearLayout
+        android:id="@+id/inputBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/in_meeting_chat_edit_text_bg"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/zm_margin_small_size"
+        android:layout_marginRight="@dimen/zm_margin_small_size"
+        >
+
+        <EditText
+            android:id="@+id/edtMessage"
+            style="@style/InMeetingChatEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:imeOptions="actionSend"
+            android:inputType="textMultiLine"
+            android:maxLength="1024"
+            android:maxLines="4"
+            android:paddingTop="@dimen/zm_padding_smaller_size"
+            android:paddingBottom="@dimen/zm_padding_smaller_size"
+            android:hint="@string/zm_invite_call_input_msg_393647"
+            tools:ignore="LabelFor">
+
+            <!--
+             Do not use requestFocus tag here. Else the soft keyboard cannot be opened
+             by clicking this EditText on some Android 3.x Tablets.
+            -->
+            <!-- <requestFocus /> -->
+        </EditText>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/zm_accessible_btn_min_size"
+        android:minHeight="@dimen/zm_accessible_btn_min_size"
+        android:background="@drawable/zm_mm_chat_input_send_btn_bg"
+        android:contentDescription="@string/zm_btn_send"
+        android:src="@drawable/zm_mm_btn_send"
+        android:layout_gravity="center_vertical"/>
+</LinearLayout>

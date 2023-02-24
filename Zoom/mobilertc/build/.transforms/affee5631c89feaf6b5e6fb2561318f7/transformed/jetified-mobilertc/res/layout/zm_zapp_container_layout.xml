@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<us.zoom.zapp.view.ZappContainerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <us.zoom.zapp.web.ZmZappWebView
+        android:id="@+id/zapp_container_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</us.zoom.zapp.view.ZappContainerLayout>

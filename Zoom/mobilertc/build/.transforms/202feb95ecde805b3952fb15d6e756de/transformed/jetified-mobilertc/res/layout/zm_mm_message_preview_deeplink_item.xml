@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zipow.videobox.view.mm.message.PreviewDeepLinkView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingHorizontal="12dp"
+    android:clickable="true"
+    android:focusable="true">
+    <ImageView
+        android:id="@+id/preview_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="0dp"
+        android:layout_margin="0dp"
+        android:src="@drawable/zm_deeplink_preview_type_public"
+        android:contentDescription="@string/zm_deeplink_preview_accessibility_head_380105" />
+    <TextView
+        android:id="@+id/preview_type_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/preview_type"
+        app:layout_constraintTop_toTopOf="@id/preview_type"
+        app:layout_constraintBottom_toBottomOf="@id/preview_type"
+        android:text="Public Channel"
+        android:importantForAccessibility="no"
+        />
+    <us.zoom.uicommon.widget.view.ZMImageButton
+        android:id="@+id/collapse_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/preview_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/zm_ic_breadcrumb_arrow"
+        android:background="@drawable/zm_transparent"
+        android:importantForAccessibility="no"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/collapse_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/preview_type"
+        android:paddingBottom="6dp">
+        <TextView
+            android:id="@+id/preview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            android:text="Preview Title"
+            android:importantForAccessibility="no"
+            />
+        <TextView
+            android:id="@+id/preview_sender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/preview_title"
+            android:text="Preview Sender"
+            android:importantForAccessibility="no"
+            />
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/preview_sender"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="Deep Link Preview"
+            android:importantForAccessibility="no"
+            />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_shape"
+            app:layout_constraintStart_toStartOf="@id/description"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            app:cardCornerRadius="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <com.zipow.videobox.view.ZMGifView
+            android:id="@+id/image_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="200dp"
+            android:maxHeight="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/zm_image_placeholder"
+            android:importantForAccessibility="no"
+            />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/file_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@id/image_shape"
+            app:layout_constraintTop_toBottomOf="@id/image_shape"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:importantForAccessibility="no"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</com.zipow.videobox.view.mm.message.PreviewDeepLinkView>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btnLearnMore"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_weight="1"
+        android:background="@color/zm_transparent"
+        android:text="@string/zm_mm_msg_timed_chat_learn_more_33479"
+        android:textAllCaps="false"
+        android:textColor="@color/zm_v2_blue_text_color"
+        android:textSize="@dimen/zm_font_normal_size" />
+
+    <Button
+        android:id="@+id/btnGot"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textColor="@color/zm_v2_alert_view_loading_bg"
+        android:background="@drawable/zm_new_unsupport_view_rounded_white"
+        android:text="@string/zm_btn_got_it"
+        android:textAllCaps="false"
+        android:textSize="@dimen/zm_font_normal_size" />
+
+</LinearLayout>

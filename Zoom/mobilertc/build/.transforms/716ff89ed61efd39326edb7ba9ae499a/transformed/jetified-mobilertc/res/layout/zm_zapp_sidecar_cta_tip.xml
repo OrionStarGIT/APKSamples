@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    app:cardBackgroundColor="@color/zm_v1_gray_1900"
+    app:cardCornerRadius="@dimen/zm_corner_smaller_size">
+
+    <LinearLayout
+        android:id="@+id/ll_zm_sidecar_latest_cta"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/zm_tip_icon_sidecar_cta_355714"
+            android:layout_marginStart="@dimen/zm_margin_small"
+            android:layout_marginTop="@dimen/zm_margin_small"
+            android:layout_marginBottom="@dimen/zm_margin_small"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_zm_sidecar_latest_cta_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get your book signed White!"
+            android:textSize="@dimen/zm_font_small_size"
+            android:textColor="@color/zm_v1_white"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/zm_margin_small"
+            android:layout_marginEnd="@dimen/zm_margin_small"
+            android:layout_marginTop="@dimen/zm_margin_small"
+            android:layout_marginBottom="@dimen/zm_margin_small"
+            android:maxWidth="@dimen/zm_btn_width_160dp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

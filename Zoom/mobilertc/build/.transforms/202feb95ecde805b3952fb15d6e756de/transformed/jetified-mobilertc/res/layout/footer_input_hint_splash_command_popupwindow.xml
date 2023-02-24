@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="10dp">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="8dp"
+        android:background="@color/zm_v2_btn_gray" />
+
+    <TextView
+        android:id="@+id/center_text"
+        style="@style/ZmTextView.Content.Primary.MediumPlus.Dimmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zm_at_buddy_list_overmany_hint_when_key_not_empty_384998" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:layout_marginStart="13dp"
+        android:background="@color/zm_v2_btn_gray" />
+
+</LinearLayout>

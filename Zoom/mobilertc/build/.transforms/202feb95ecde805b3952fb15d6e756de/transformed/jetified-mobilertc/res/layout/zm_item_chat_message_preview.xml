@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:layout_height="@dimen/zm_picker_bottom_photo_size_v2"
+        android:background="@drawable/zm_bg_item_chat_mesage_preview"
+        android:maxWidth="280dp"
+        android:layout_margin="4dp"
+        android:paddingStart="8dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:id="@+id/chatMsgtitle"
+            style="@style/ZmTextView.Button.Primary.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="280dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="ISSUE-7836487 Network issues"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:id="@+id/chatMsgDes"
+            style="@style/ZmTextView.Content.Primary.Medium.Dimmed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chatMsgtitle"
+            android:layout_alignParentStart="true"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:lines="2"
+            android:maxWidth="280dp"
+            android:singleLine="false"
+            tools:text="Pharetra viverra nec praesent cursus. In elit euismod pharetra, eget quam. Nulla ..." />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="top|right"
+        android:background="@drawable/ic_pic_delete"
+        android:contentDescription="@string/zm_mm_delete_image_accessibility_134397"/>
+</FrameLayout>

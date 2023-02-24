@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="16dp"
+    android:viewportWidth="16"
+    android:viewportHeight="16">
+    <path
+        android:fillColor="@color/zm_sip_income_input_send_btn_color"
+        android:pathData="M14.459,1.009L1.235,1C0.077,0.999 -0.442,2.477 0.454,3.224L3.746,5.969C4.181,6.331 4.767,6.442 5.301,6.263L8.795,5.091C9.238,4.943 9.543,5.542 9.167,5.825L6.207,8.048C5.755,8.388 5.504,8.939 5.543,9.509L5.838,13.831C5.919,15.007 7.403,15.431 8.073,14.469L15.714,3.482C16.436,2.445 15.708,1.01 14.459,1.009Z" />
+</vector>

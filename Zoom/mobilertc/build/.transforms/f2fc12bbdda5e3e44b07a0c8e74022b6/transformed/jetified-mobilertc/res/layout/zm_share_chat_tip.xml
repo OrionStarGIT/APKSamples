@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginLeft="@dimen/zm_margin_medium_size"
+    android:layout_marginRight="@dimen/zm_margin_medium_size"
+    app:cardBackgroundColor="@color/zm_v2_webinar_cardview_bg"
+    app:cardCornerRadius="@dimen/zm_radius_medium"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/zm_padding_smallest">
+
+        <us.zoom.uicommon.widget.view.ZMTextView
+            android:id="@+id/zm_share_chat_msg"
+            style="@style/ZMTextView.TipMessage.OnDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:padding="@dimen/zm_padding_smaller_size" />
+
+        <ImageView
+            android:id="@+id/zm_share_chat_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/zm_btn_close"
+            android:padding="@dimen/zm_padding_smaller_size"
+            android:src="@drawable/zm_icon_close" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

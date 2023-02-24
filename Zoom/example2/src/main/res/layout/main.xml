@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1920px"
+    android:layout_height="1080px"
+    android:background="#f6f6fa"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="1920px"
+        android:layout_height="98px"
+        android:layout_marginTop="20px">
+
+        <ImageView
+            android:id="@+id/imageViewExit"
+            android:layout_marginLeft="16px"
+            android:layout_marginTop="5px"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:src="@drawable/mini_zoom_navi_icon_back"/>
+
+        <TextView
+            android:id="@+id/textViewExit"
+            android:layout_marginLeft="4px"
+            android:layout_marginTop="19px"
+            android:layout_width="103px"
+            android:layout_height="50px"
+            android:textSize="36px"
+            android:textFontWeight="500"
+            android:gravity="left"
+            android:textColor="#333333"
+            android:lineHeight="50px"
+            android:layout_weight="1"
+            android:text="BACK" />
+
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_marginTop="5px"
+            android:layout_marginRight="76.09px"
+            android:layout_width="187.82px"
+            android:layout_height="42.58dp"
+            android:src="@drawable/mini_zoom_logo"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_marginLeft="744px"
+        android:layout_marginTop="36px"
+        android:layout_width="432px"
+        android:layout_height="84px"
+        android:textSize="60px"
+        android:textFontWeight="700"
+        android:gravity="center"
+        android:textColor="#222222"
+        android:lineHeight="84px"
+        android:text="Join A Meeting" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_marginLeft="560px"
+        android:layout_marginTop="42px"
+        android:layout_width="192px"
+        android:layout_height="40px"
+        android:textSize="28px"
+        android:textFontWeight="400"
+        android:gravity="left"
+        android:textColor="#222222"
+        android:lineHeight="40px"
+        android:text="Meeting Code" />
+
+        <EditText
+            android:id="@+id/meetingCode"
+            android:layout_marginTop="16px"
+            android:layout_width="800px"
+            android:layout_height="100px"
+            android:layout_gravity="center"
+            android:background="@drawable/round_linearlayout"
+            android:orientation="horizontal"
+            android:textSize="36px"
+            android:textFontWeight="400"
+            android:gravity="center"
+            android:textColor="#333333"
+            android:lineHeight="50px"
+            android:hint="Please input the meeting code"
+            android:textColorHint="#30333333"
+            android:text="85224729671" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_marginLeft="560px"
+        android:layout_marginTop="35px"
+        android:layout_width="78px"
+        android:layout_height="40px"
+        android:textSize="28px"
+        android:textFontWeight="400"
+        android:gravity="left"
+        android:textColor="#222222"
+        android:lineHeight="40px"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/displayName"
+        android:layout_marginTop="16px"
+        android:layout_width="800px"
+        android:layout_height="100px"
+        android:inputType="number"
+        android:layout_gravity="center"
+        android:background="@drawable/round_linearlayout"
+        android:orientation="horizontal"
+        android:textSize="36px"
+        android:textFontWeight="500"
+        android:gravity="center"
+        android:textColor="#333333"
+        android:lineHeight="50px"
+        android:hint="Robot 81"
+        android:textColorHint="#333333"
+        android:text="ZoomUS SDK1" />
+
+    <LinearLayout
+        android:layout_marginTop="33.3px"
+        android:layout_width="1920px"
+        android:layout_height="48px"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.ainirobot.zoom.SelectorImageView
+            android:id="@+id/imageviewMicrophone"
+            android:layout_width="46px"
+            android:layout_height="46px"
+            app:selector_src="@drawable/mini_zoom_checkbox_uncheck"
+            android:src="@drawable/mini_zoom_checkbox_checked" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_marginLeft="18px"
+            android:layout_width="605px"
+            android:layout_height="40px"
+            android:textSize="28px"
+            android:textFontWeight="400"
+            android:gravity="left"
+            android:textColor="#222222"
+            android:lineHeight="40px"
+            android:text="Join a meeting with the microphone enabled" />
+
+    </LinearLayout>
+
+<!--    <LinearLayout
+        android:layout_marginTop="33.3px"
+        android:layout_width="1920px"
+        android:layout_height="48px"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.ainirobot.zoom.SelectorImageView
+            android:id="@+id/iv1"
+            android:layout_width="46px"
+            android:layout_height="46px"
+            app:selector_src="@drawable/mini_zoom_checkbox_checked"
+            android:src="@drawable/mini_zoom_checkbox_uncheck" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_marginLeft="18px"
+            android:layout_width="605px"
+            android:layout_height="40px"
+            android:textSize="28px"
+            android:textFontWeight="400"
+            android:gravity="left"
+            android:textColor="#222222"
+            android:lineHeight="40px"
+            android:text="Join a meeting with the camera enabled" />
+
+    </LinearLayout>-->
+
+    <Button
+        android:id="@+id/btnTabMeeting"
+        android:enabled="false"
+        android:layout_marginLeft="640px"
+        android:layout_marginTop="75.5px"
+        android:layout_width="640px"
+        android:layout_height="108px"
+        android:textSize="36px"
+        android:textFontWeight="500"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:lineHeight="50px"
+        android:background="@drawable/selector"
+        android:text="Initializing..." />
+
+    <LinearLayout
+        android:layout_marginTop="32px"
+        android:layout_width="1920px"
+        android:layout_height="33px"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="490px"
+            android:layout_height="33px"
+            android:textSize="24px"
+            android:textFontWeight="400"
+            android:textColor="#222222"
+            android:lineHeight="33px"
+            android:text="Pressing the button means you agree our" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="176px"
+            android:layout_height="33px"
+            android:textSize="24px"
+            android:textFontWeight="500"
+            android:textColor="#0059FF"
+            android:lineHeight="33px"
+            android:text="Service Policy" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="52px"
+            android:layout_height="33px"
+            android:textSize="24px"
+            android:textFontWeight="400"
+            android:textColor="#222222"
+            android:lineHeight="33px"
+            android:text="and" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="209px"
+            android:layout_height="33px"
+            android:textSize="24px"
+            android:textFontWeight="500"
+            android:textColor="#0059FF"
+            android:lineHeight="33px"
+            android:text="Privcy Agreement" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

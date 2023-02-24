@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/svVoicemailExpandScroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/zm_white"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clContentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/zm_padding_medium">
+
+        <RelativeLayout
+            android:id="@+id/layoutAvatar"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:duplicateParentState="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.zipow.videobox.view.AvatarView
+                android:id="@+id/avatarView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:duplicateParentState="true"
+                app:zm_cornerRadiusRatio="0.32"
+                app:zm_description_enable="false" />
+
+            <com.zipow.videobox.view.PresenceStateView
+                android:id="@+id/imgPresence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                app:zm_subpresence_type="0" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgVoicemailState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/zm_unread_voicemail"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/layoutAvatar"
+            app:layout_constraintEnd_toStartOf="@id/layoutAvatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layoutAvatar"
+            tools:ignore="ContentDescription"
+            tools:visibility="visible" />
+
+        <com.zipow.videobox.view.ZMSimpleEmojiTextView
+            android:id="@+id/tvBuddyName"
+            style="@style/UIKitTextView.BuddyName.Normal.SingleLine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="start"
+            app:layout_constraintBottom_toTopOf="@id/tvCallNo"
+            app:layout_constraintEnd_toStartOf="@id/btnCallback"
+            app:layout_constraintStart_toEndOf="@id/layoutAvatar"
+            app:layout_constraintTop_toTopOf="@id/layoutAvatar"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/tvCallNo"
+            style="@style/ZmTextView.Content.Primary.Medium.Dimmed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="start"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/layoutAvatar"
+            app:layout_constraintEnd_toStartOf="@id/btnCallback"
+            app:layout_constraintStart_toEndOf="@id/layoutAvatar"
+            app:layout_constraintTop_toBottomOf="@id/tvBuddyName"
+            tools:text="@tools:sample/us_phones" />
+
+        <ImageView
+            android:id="@+id/btnAudioShare"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/zm_ic_sip_audio_share"
+            android:contentDescription="@string/zm_sip_accessbility_share_voicemail_290287"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/layoutAvatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layoutAvatar" />
+
+        <ImageView
+            android:id="@+id/btnCallback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/zm_ic_sip_callback"
+            android:contentDescription="@string/zm_sip_accessbility_callback_67408"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/layoutAvatar"
+            app:layout_constraintEnd_toStartOf="@id/btnAudioShare"
+            app:layout_constraintTop_toTopOf="@id/layoutAvatar"
+            app:layout_goneMarginEnd="16dp" />
+
+        <View
+            android:id="@+id/divider0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/zm_v2_cell_divider"
+            app:layout_constraintTop_toBottomOf="@id/layoutAvatar" />
+
+        <LinearLayout
+            android:id="@+id/decryptPromptPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/divider0">
+
+            <TextView
+                android:id="@+id/tvDecryptPrompt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/zm_v2_txt_primary"
+                android:textSize="@dimen/zm_ui_kit_text_size_13sp"
+                tools:text="@string/zm_pbx_voicemail_cannot_decrypt_prompt_386885" />
+
+            <TextView
+                android:id="@+id/tvViewDevices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/zm_pbx_voicemail_view_devices_386885"
+                android:textColor="@color/zm_v2_btn_blue_text_color"
+                android:textSize="@dimen/zm_ui_kit_text_size_13sp" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/infoPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/divider0">
+
+            <FrameLayout
+                android:id="@+id/videoPlayerViewContainer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone"
+                app:layout_constraintDimensionRatio="H,4:3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <com.zipow.videobox.view.sip.ZMSeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/videoPlayerViewContainer" />
+
+            <TextView
+                android:id="@+id/tvProgressCurrent"
+                style="@style/UIKitTextView.SecondaryText.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@id/seekBar"
+                app:layout_constraintTop_toBottomOf="@id/seekBar"
+                tools:text="0:01" />
+
+            <TextView
+                android:id="@+id/tvProgressTotal"
+                style="@style/UIKitTextView.SecondaryText.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@id/seekBar"
+                app:layout_constraintTop_toBottomOf="@id/seekBar"
+                tools:text="0:36" />
+
+            <com.zipow.videobox.view.sip.AudioPlayerControllerButton
+                android:id="@+id/btnToggle"
+                android:layout_width="@dimen/zm_height_36dp"
+                android:layout_height="@dimen/zm_height_36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvProgressCurrent" />
+
+            <TextView
+                android:id="@+id/tvSpeakerStatus"
+                style="@style/ZmTextView.Button.Secondary.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="@string/zm_lbl_speaker"
+                android:textColor="@color/zm_v2_txt_action"
+                app:layout_constraintBottom_toBottomOf="@id/btnToggle"
+                app:layout_constraintEnd_toStartOf="@id/btnDelete"
+                app:layout_constraintStart_toEndOf="@id/btnToggle"
+                app:layout_constraintTop_toTopOf="@id/btnToggle" />
+
+            <ImageView
+                android:id="@+id/btnDelete"
+                android:layout_width="@dimen/zm_height_36dp"
+                android:layout_height="@dimen/zm_height_36dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/zm_accessibility_sip_call_delete_item"
+                android:padding="@dimen/zm_padding_smallest_size"
+                android:src="@drawable/zm_sip_delete"
+                app:layout_constraintBottom_toBottomOf="@id/btnToggle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnToggle" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/zm_v2_cell_divider"
+                app:layout_constraintTop_toBottomOf="@id/tvSpeakerStatus" />
+
+            <View
+                android:id="@+id/tagPlaceHolder"
+                android:layout_width="106dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+            <TextView
+                android:id="@+id/tvDateTag"
+                style="@style/ZmTextView.Content.Primary.Dimmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/zm_pbx_voicemail_date_tag_386885"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+            <TextView
+                android:id="@+id/tvToTag"
+                style="@style/ZmTextView.Content.Primary.Dimmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/zm_pbx_voicemail_to_tag_386885"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDateTag" />
+
+            <TextView
+                android:id="@+id/tvEncryptionTag"
+                style="@style/ZmTextView.Content.Primary.Dimmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/zm_pbx_voicemail_encryption_tag_386885"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvToTag" />
+
+            <TextView
+                android:id="@+id/tvVerificationTag"
+                style="@style/ZmTextView.Content.Primary.Dimmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/zm_pbx_voicemail_verification_tag_386885"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvEncryptionTag" />
+
+            <TextView
+                android:id="@+id/tvSharedByTag"
+                style="@style/ZmTextView.Content.Primary.Dimmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/zm_pbx_voicemail_shared_by_tag_386885"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvVerificationTag" />
+
+            <TextView
+                android:id="@+id/tvSharingTag"
+                style="@style/ZmTextView.Content.Primary.Dimmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/zm_pbx_voicemail_sharing_tag_386885"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSharedByTag" />
+
+            <TextView
+                android:id="@+id/tvOtherInfoTag"
+                style="@style/ZmTextView.Content.Primary.Dimmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/zm_pbx_voicemail_other_info_tag_386885"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSharingTag" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/tagBarrier"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="tagPlaceHolder,tvDateTag,tvToTag,tvEncryptionTag,tvVerificationTag,tvSharedByTag,tvSharingTag,tvOtherInfoTag" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                style="@style/ZmTextView.Content.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="@id/tvDateTag"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tagBarrier"
+                app:layout_constraintTop_toTopOf="@id/tvDateTag"
+                tools:text="Dec 1, 2022, 2:24 PM" />
+
+            <TextView
+                android:id="@+id/tvTo"
+                style="@style/ZmTextView.Content.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="@id/tvToTag"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tagBarrier"
+                app:layout_constraintTop_toTopOf="@id/tvToTag"
+                tools:text="Support Queue" />
+
+            <TextView
+                android:id="@+id/tvEncryption"
+                style="@style/ZmTextView.Content.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="@id/tvEncryptionTag"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tagBarrier"
+                app:layout_constraintTop_toTopOf="@id/tvEncryptionTag"
+                tools:text="Standard · Learn more" />
+
+            <TextView
+                android:id="@+id/tvVerification"
+                style="@style/ZmTextView.Content.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="@id/tvVerificationTag"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tagBarrier"
+                app:layout_constraintTop_toTopOf="@id/tvVerificationTag"
+                tools:text="Verified Number" />
+
+            <TextView
+                android:id="@+id/tvSharedBy"
+                style="@style/ZmTextView.Content.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="@id/tvSharedByTag"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tagBarrier"
+                app:layout_constraintTop_toTopOf="@id/tvSharedByTag"
+                tools:text="Clara Arellano" />
+
+            <TextView
+                android:id="@+id/tvSharing"
+                style="@style/ZmTextView.Content.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="@id/tvSharingTag"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tagBarrier"
+                app:layout_constraintTop_toTopOf="@id/tvSharingTag"
+                tools:text="Disabled" />
+
+            <TextView
+                android:id="@+id/tvOtherInfo"
+                style="@style/ZmTextView.Content.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="@id/tvOtherInfoTag"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tagBarrier"
+                app:layout_constraintTop_toTopOf="@id/tvOtherInfoTag"
+                tools:text="Maybe Spam" />
+
+            <TextView
+                android:id="@+id/tvTranscriptionTag"
+                style="@style/ZmTextView.Content.Primary.Dimmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/zm_pbx_voicemail_transcription_tag_386885"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvOtherInfoTag" />
+
+            <TextView
+                android:id="@+id/tvTranscription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:textColor="@color/zm_v2_txt_primary"
+                android:textSize="@dimen/zm_font_normal_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTranscriptionTag"
+                tools:text="Loading transcription..." />
+
+            <TextView
+                android:id="@+id/tvAsrEngine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTranscription"
+                tools:text="Powered by Otter.ai™"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/gpTo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:constraint_referenced_ids="tvToTag,tvTo" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/gpSharedBy"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:constraint_referenced_ids="tvSharedByTag,tvSharedBy" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/gpSharing"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:constraint_referenced_ids="tvSharingTag,tvSharing" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/gpOtherInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:constraint_referenced_ids="tvOtherInfoTag,tvOtherInfo" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/gpTranscription"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:constraint_referenced_ids="tvTranscriptionTag,tvTranscription,tvAsrEngine" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

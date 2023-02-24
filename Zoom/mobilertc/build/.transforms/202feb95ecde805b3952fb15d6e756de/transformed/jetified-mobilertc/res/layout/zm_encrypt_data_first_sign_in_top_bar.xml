@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btnOkay"
+        style="@style/ZmButton.Text"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/zm_encrypt_data_okay_386885"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivReviewLoading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="12dp"
+        android:src="@drawable/zm_ic_loading_light_night_animated"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/btnOkay"
+        app:layout_constraintEnd_toEndOf="@id/btnOkay"
+        app:layout_constraintStart_toStartOf="@id/btnOkay"
+        app:layout_constraintTop_toTopOf="@id/btnOkay"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

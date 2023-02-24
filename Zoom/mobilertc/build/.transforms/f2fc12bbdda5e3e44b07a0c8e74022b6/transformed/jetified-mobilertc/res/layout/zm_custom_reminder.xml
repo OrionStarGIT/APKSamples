@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/custom_reminder_header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/zm_bottom_sheet_half_rect_bg"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/cancelBtn"
+            style="@style/ZmTitleBarAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:text="@string/zm_mm_reminders_custom_reminder_cancel_285622"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <us.zoom.uicommon.widget.view.ZMCommonTextView
+            style="@style/ZmTitleBarTitle.Dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/zm_mm_reminders_custom_reminder_header_285622"
+            android:textColor="@color/zm_v2_btn_black_text_color"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/save_edit_reminder"
+            style="@style/ZmTitleBarAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:text="@string/zm_mm_reminders_custom_save_285622"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="@color/zm_v2_msg_bg_from"
+        android:paddingLeft="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/zm_v1_gray_D200"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_reminder_header_layout" />
+
+    <LinearLayout
+        android:id="@+id/date_layout"
+        style="@style/ZmSettingItem"
+        android:background="@drawable/zm_setting_sub_option_item"
+        app:layout_constraintTop_toBottomOf="@id/divider1">
+
+        <us.zoom.uicommon.widget.view.ZMCommonTextView
+            style="@style/ZmSettingItemTitle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/zm_mm_reminders_custom_date_285622" />
+
+        <TextView
+            android:id="@+id/reminder_date_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            tools:text="03/30/2022" />
+
+        <ImageView
+            style="@style/ZmSettingItemArrow"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="@color/zm_v2_msg_bg_from"
+        android:paddingLeft="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/zm_v1_gray_D200"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_layout" />
+
+    <LinearLayout
+        android:id="@+id/time_layout"
+        style="@style/ZmSettingItem"
+        android:background="@drawable/zm_setting_sub_option_item"
+        app:layout_constraintTop_toBottomOf="@id/divider2">
+
+        <us.zoom.uicommon.widget.view.ZMCommonTextView
+            style="@style/ZmSettingItemTitle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/zm_mm_reminders_custom_time_285622" />
+
+        <TextView
+            android:id="@+id/reminder_time_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            tools:text="03/30/2022" />
+
+        <ImageView
+            style="@style/ZmSettingItemArrow"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/zm_v2_msg_bg_from"
+        android:paddingLeft="16dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="8dp"
+        android:text="@string/zm_mm_reminders_custom_note_optional_285622"
+        android:textColor="@color/zm_v1_gray_D200"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/time_layout" />
+
+    <EditText
+        android:id="@+id/reminder_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/zm_white"
+        android:hint="@string/zm_mm_reminders_custom_remind_me_to_285622"
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences|textNoSuggestions"
+        android:maxLength="256"
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/reminder_me_notes_text_color"
+        android:textColorHint="@color/zm_v2_txt_secondary"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/zm_v2_msg_bg_from"
+        android:paddingLeft="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reminder_notes" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

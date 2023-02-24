@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/threat_call_rootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/zm_dialog_white_big_corner_roundrect_bg">
+
+    <LinearLayout
+        android:id="@+id/threat_call_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/zm_dialog_white_big_corner_roundrect_bg"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/zm_margin_32dp"
+        android:paddingTop="@dimen/zm_btn_width_48dp"
+        android:paddingRight="@dimen/zm_margin_32dp"
+        android:paddingBottom="@dimen/zm_btn_width_48dp">
+
+        <TextView
+            android:id="@+id/threat_call_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/zm_v2_tab_path_normal"
+            android:textSize="@dimen/zm_ui_kit_text_size_20sp"
+            android:textStyle="bold"
+            tools:text="Block (500) 555-9875"/>
+
+        <TextView
+            android:id="@+id/threat_call_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/zm_margin_smallest_size"
+            android:lineSpacingExtra="@dimen/zm_font_line_space_small_size"
+            tools:text="You will not receive phone calls or text messages from this number.Add an additional comment to help your administrator classify this number for others."
+            android:textColor="@color/zm_v2_tab_path_normal"
+            android:textSize="@dimen/zm_ui_kit_text_size_14sp" />
+
+        <EditText
+            android:id="@+id/threat_call_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/zm_dialog_margin_16dp"
+            android:width="100dp"
+            android:background="@drawable/zm_sip_threat_call_dialog_edittext_stroke"
+            android:hint="  (optional)"
+            android:lineSpacingExtra="@dimen/zm_font_line_space_small_size"
+            android:maxLength="255"
+            android:minLines="1"
+            android:paddingLeft="@dimen/zm_radius_small"
+            android:text=""
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/zm_ui_kit_text_size_14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/threat_call_block_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zm_btn_width_48dp"
+            android:layout_marginTop="@dimen/zm_dialog_margin_16dp"
+            android:background="@drawable/zm_sip_threat_call_dialog_btn_bg"
+            android:gravity="center"
+            android:text="@string/zm_sip_threat_dialog_block_button_359118"
+            android:textColor="@color/zm_v2_tab_path_normal"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/threat_call_cancel_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zm_btn_width_48dp"
+            android:layout_marginTop="@dimen/zm_divider_height"
+            android:background="@drawable/zm_sip_threat_call_dialog_btn_bg"
+            android:gravity="center"
+            android:textColor="@color/zm_v2_tab_path_normal"
+            android:text="@string/zm_sip_threat_dialog_cancel_button_359118"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

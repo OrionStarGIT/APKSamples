@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zoom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbarButtonParent"
+    android:minWidth="55dp"
+    android:layout_width="wrap_content"
+    android:layout_height="65dp"
+    >
+
+    <com.zipow.videobox.view.btrecycle.ToolbarRecycleButton
+        android:id="@+id/toolbarButton"
+        android:focusable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:minWidth="55dp"
+        android:minHeight="55dp"
+        zoom:zm_icon="@drawable/zm_btn_mute_audio"
+        zoom:zm_text="@string/zm_btn_mute_audio"
+        />
+
+</RelativeLayout>

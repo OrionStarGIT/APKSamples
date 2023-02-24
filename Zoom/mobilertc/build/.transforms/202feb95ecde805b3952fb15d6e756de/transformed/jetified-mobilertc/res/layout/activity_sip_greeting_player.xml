@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/sipGreetingPlayerFragment"
+        android:name="com.zipow.videobox.view.sip.videomail.SipVideoPlayerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnRefresh"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:minWidth="@dimen/zm_btn_width_48dp"
+        android:minHeight="@dimen/zm_btn_width_48dp"
+        android:background="@null"
+        android:contentDescription="@string/zm_btn_refresh"
+        android:scaleType="fitXY"
+        android:src="@drawable/zm_player_fresh"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/sipGreetingPlayerFragment"
+        app:layout_constraintLeft_toLeftOf="@id/sipGreetingPlayerFragment"
+        app:layout_constraintRight_toRightOf="@id/sipGreetingPlayerFragment"
+        app:layout_constraintTop_toTopOf="@id/sipGreetingPlayerFragment"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtOneBuddyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:ellipsize="none"
+        android:fadingEdgeLength="48dp"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:requiresFadingEdge="horizontal"
+        android:singleLine="true"
+        android:textColor="@color/zm_v2_txt_primary"
+        android:textSize="@dimen/zm_font_larger_size"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@+id/panelInCall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sipGreetingPlayerFragment"
+        app:layout_constraintVertical_bias="0.85"
+        tools:text="Jingkkkkkkkdfsafdsafdsafjieajfiofsajiossre" />
+
+    <com.zipow.videobox.view.sip.videomail.SipInGreetingPlayerPanelView
+        android:id="@+id/panelInCall"
+        android:layout_width="@dimen/zm_sip_dialpad_width"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="53dp"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/btnEndCall"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnEndCall"
+        android:layout_width="@dimen/zm_sip_dialpad_key_width"
+        android:layout_height="@dimen/zm_sip_dialpad_key_width"
+        android:contentDescription="@string/zm_accessbility_btn_end_call_14480"
+        app:srcCompat="@drawable/zm_sip_end_call"
+        android:layout_marginBottom="@dimen/zm_sip_hangup_btn_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

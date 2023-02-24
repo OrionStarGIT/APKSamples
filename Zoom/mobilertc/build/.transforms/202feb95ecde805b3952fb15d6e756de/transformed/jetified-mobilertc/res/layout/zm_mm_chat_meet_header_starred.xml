@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="66dp"
+    android:background="@drawable/zm_list_selector_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/zm_padding_small"
+    android:paddingBottom="@dimen/zm_padding_small">
+
+    <com.zipow.videobox.view.AvatarView
+        android:id="@+id/zm_starred_avatarView"
+        android:layout_width="@dimen/zm_avatar_size"
+        android:layout_height="@dimen/zm_avatar_size"
+        android:layout_marginStart="@dimen/zm_padding_normal"
+        android:duplicateParentState="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/UIKitTextView.CellTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/zm_font_size_medium"
+        android:layout_marginEnd="@dimen/zm_font_size_medium"
+        android:duplicateParentState="true"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:singleLine="true"
+        android:text="@string/zm_starred_list_head_txt_65147"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtNoteBubble"
+        app:layout_constraintStart_toEndOf="@+id/zm_starred_avatarView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNoteBubble"
+        style="@style/ZMTextView.UnreadMessageCount.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:duplicateParentState="true"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/zm_mm_notification_99plus_285622"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

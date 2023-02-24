@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+   >
+    <us.zoom.feature.video.views.ZmPreviewVideoView
+        android:id="@+id/previewVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="@dimen/zm_margin_medium_minus_size"
+        android:orientation="horizontal">
+
+        <CheckedTextView
+            android:id="@+id/btnSmartAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkMark="@drawable/btn_audio_state_bg"
+            android:layout_marginRight="@dimen/zm_dialog_margin_16dp"/>
+
+        <CheckedTextView
+            android:id="@+id/btnSmartVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkMark="@drawable/btn_video_state_bg" />
+    </LinearLayout>
+    <us.zoom.uicommon.widget.view.ZMCommonTextView
+        android:id="@+id/userSmartName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ZMTextView.ExtremLarge.OnDark"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="claire"
+        android:visibility="gone"
+        />
+</FrameLayout>
