@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:id="@+id/eve_loading_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="0dp">
+        <ImageView
+            android:id="@+id/eve_loading"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/eve_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="73px"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/eve_loading_tip"
+            android:alpha="0.5"
+            android:textSize="15sp"
+            android:singleLine="false"
+            android:ellipsize="end"/>
+
+            <ImageView
+                android:id="@+id/eve_reboot"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="80px"
+                android:visibility="gone"
+                android:background="@drawable/reboot_icon"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
