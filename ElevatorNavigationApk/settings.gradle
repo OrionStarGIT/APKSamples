@@ -1,0 +1,2 @@
+rootProject.name='ElevatorNavigationApk'
+include ':app'
