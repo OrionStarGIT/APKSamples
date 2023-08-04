@@ -43,8 +43,11 @@ public class MainActivity extends Activity implements Constants, MeetingServiceL
 	public final static int TAB_PAGE_2  = 3;
 	public static int i = 0;
 
-//	public static String APP_KEY = "kI2PfJFUlPwoiEx40oqw1sOSoABVY7nX6qzw";
-//	public static String APP_SECRET = "Vlx3IlD5CXbL9WpB5FylMd6zajUrV1Y7Kij3";
+	/**
+	 * TODO zoom秘钥 后续改为打包时填入
+	 */
+	public static String APP_KEY = "";
+	public static String APP_SECRET = "";
 	public final static String MEETING_NO  = "85224729671";
 	public final static String PASSWORD  = "052340";
 	

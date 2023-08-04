@@ -44,6 +44,8 @@ public class CustomDialog extends Dialog {
             appSecret = (EditText) mLayout.findViewById(R.id.appSecret);
             btnCancel = (Button) mLayout.findViewById(R.id.btn_cancel);
             btnConfirm = (Button) mLayout.findViewById(R.id.btn_confirm);
+            appKey.setText(MainActivity.APP_KEY);
+            appSecret.setText(MainActivity.APP_SECRET);
         }
         /**
          * 设置 Dialog 标题
